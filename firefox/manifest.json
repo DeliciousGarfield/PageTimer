@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "PageTimer",
+  "version": "0.1.0",
+  "description": "PageTimer is an extension for Firefox that measures page loading time.",
+  "homepage_url": "https://github.com/DeliciousGarfield/PageTimer",
+  "icons": {
+    "48": "icons/icon.png"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "pagetimer@tianxiduo.org"
+    }
+  },
+
+  "permissions": [
+    "tabs"
+  ],
+
+  "page_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Page Timer"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content_script.js"]
+  }
+]
+}
